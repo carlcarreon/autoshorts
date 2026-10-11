@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AutoShorts — Create a short video</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script src="{{ url_for('static', filename='app.js') }}" defer></script>
+</head>
+<body>
+  <main>
+    <header><span class="brand-mark" aria-hidden="true">A</span><span>AutoShorts</span></header>
+    <section class="intro">
+      <p class="eyebrow">YOUR NEXT LITTLE DISCOVERY</p>
+      <h1>A question in.<br>A short video out.</h1>
+      <p class="description">Pick something you’re curious about. Get a narrated video with clear captions, ready to watch and share.</p>
+    </section>
+    <section class="panel" aria-label="Create a video">
+      <form id="generate-form">
+        <label for="topic">What would you like to explain?</label>
+        <textarea id="topic" name="topic" maxlength="200" rows="3" required placeholder="How do solar panels work?"></textarea>
+        <div class="form-footer"><span>One topic · About 30 seconds</span><button id="generate-button" type="submit">Generate Video <span aria-hidden="true">→</span></button></div>
+      </form>
+      <div id="loading" class="status" role="status" aria-live="polite" hidden>
+        <span class="spinner" aria-hidden="true"></span>
+        <div><strong>Creating your video…</strong><p>This may take a minute or two. Keep this page open.</p></div>
+      </div>
+      <p id="error" class="error" role="alert" hidden></p>
+    </section>
+    <section id="result" class="panel result" aria-label="Generated video" hidden>
+      <div class="result-heading"><div><p class="eyebrow">READY TO WATCH</p><h2>Your short video</h2></div><a id="download" class="download" download>Download MP4 ↓</a></div>
+      <video id="video" controls playsinline preload="metadata" aria-label="Your generated AutoShorts video"></video>
+    </section>
+    <footer>Made with curiosity. <span>AutoShorts</span></footer>
+  </main>
+</body>
+</html>

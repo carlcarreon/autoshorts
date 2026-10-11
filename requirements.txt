@@ -1,0 +1,3 @@
+Pillow>=10,<12
+Flask>=3.0,<3.2
+# Optional AI scripts: pip install -r requirements-ai.txt
